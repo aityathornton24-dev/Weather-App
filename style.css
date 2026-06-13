@@ -1,0 +1,279 @@
+/* Deep, vibrant royal-to-indigo backdrop gradient */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #060b1e 0%, #0d1b46 50%, #080f2b 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphic Frame Wrapper with a High-Gloss Electric Blue Finish */
+.weather-app {
+    position: relative;
+    overflow: hidden;
+    width: 375px;
+    
+    /* Layered background: Transparent cobalt blue tint mixed with slight white highlights */
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.25) 0%, rgba(30, 64, 175, 0.08) 100%);
+    
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    
+    /* Stronger, glowing blue-white border acting as a bevel catching the light source */
+    border: 1px solid rgba(147, 197, 253, 0.35);
+    border-radius: 44px;
+    padding: 45px 24px;
+    
+    /* Deep deep shadows combined with an outer ambient blue glow */
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.8),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        0 0 40px rgba(30, 64, 175, 0.2);
+    
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Sharp Specular Light Reflection Overlay across the phone lens */
+.glass-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        125deg, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        rgba(255, 255, 255, 0.08) 40%, 
+        transparent 40.1%, 
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Hero Display Styling */
+.hero-display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Sunshine Burst Positioning */
+.sunshine-container {
+    position: absolute;
+    top: -45px;
+    right: 15px;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Bright Solar Core */
+.sunshine-core {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: radial-gradient(circle, #ffffff 0%, #fffbeb 30%, #facc15 70%, #eab308 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 25px #ffffff,
+        0 0 50px #facc15,
+        0 0 80px rgba(234, 179, 8, 0.4);
+    z-index: 3;
+}
+
+/* Radiating Sunshine Rays */
+.sunshine-rays {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: repeating-conic-gradient(
+        from 0deg,
+        rgba(250, 204, 21, 0.18) 0deg 15deg,
+        transparent 15deg 30deg
+    );
+    mask: radial-gradient(circle, transparent 25px, #000000 32px);
+    -webkit-mask: radial-gradient(circle, transparent 25px, #000000 32px);
+    filter: blur(1px);
+    z-index: 2;
+    animation: rotateSunshine 40s linear infinite;
+}
+
+/* Massive Extruded 3D Typography */
+.temp-3d {
+    font-size: 11rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 0.9;
+    margin: 0;
+    letter-spacing: -3px;
+    z-index: 2;
+    text-shadow: 
+        1px 1px 0px #dbeafe, 
+        2px 2px 0px #93c5fd, 
+        3px 3px 0px #3b82f6, 
+        4px 4px 0px #1d4ed8,
+        6px 6px 20px rgba(0, 0, 0, 0.9),
+        0px -20px 40px rgba(254, 240, 138, 0.25);
+}
+
+/* Status Bar Layout */
+.weather-status-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    z-index: 3;
+}
+
+.condition-label { color: #ffffff; }
+.uv-index { color: #93c5fd; }
+
+.high-low-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #93c5fd;
+    opacity: 0.7;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    z-index: 3;
+}
+
+/* City Display & Input Area */
+.city-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
+    width: 100%;
+    z-index: 3;
+}
+
+.city-input {
+    width: 90%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(147, 197, 253, 0.3);
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.city-input:focus {
+    border-bottom-color: #ffffff;
+}
+
+.city-input::placeholder { color: rgba(255, 255, 255, 0.3); }
+.timeline-indicator {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #93c5fd;
+    opacity: 0.5;
+    letter-spacing: 2px;
+    margin-top: 6px;
+}
+
+/* Bottom 2x3 Grid Section */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    z-index: 3;
+}
+
+/* Glossy Mini Blue Panels */
+.forecast-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.005) 100%);
+    border: 1px solid rgba(147, 197, 253, 0.2);
+    border-radius: 20px;
+    padding: 16px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-sizing: border-box;
+}
+
+/* Micro reflection glaze on mini panels */
+.forecast-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 35%, transparent 35.1%);
+    pointer-events: none;
+}
+
+.day-id {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #93c5fd;
+    opacity: 0.6;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+}
+
+.mini-display {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.mini-temp {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 1px 1px 0px #3b82f6, 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mini-status {
+    position: absolute;
+    font-family: 'Brush Script MT', 'Comic Sans MS', cursive;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transform: rotate(-6deg);
+    z-index: 3;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.status-sunny { color: #facc15; }
+.status-cloudy { color: #67e8f9; }
+.next-preview { opacity: 0.45; }
+
+@keyframes rotateSunshine {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
