@@ -277,3 +277,15 @@ body {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+/* Sun emoji behind mini temperature */
+.mini-display::before {
+    content: "☀️";
+    position: absolute;
+    font-size: 2.8rem;
+    opacity: 0.18;
+    filter: blur(0.5px);
+    transform: translateY(-4px);
+    z-index: 1;
+    pointer-events: none;
+}
